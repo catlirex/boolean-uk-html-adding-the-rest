@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template:
+    "main-menu-button logo      search-bar  search-bar   search-bar" 50px
+    "left-menu        left-menu main       quick-setting right-menu" 300px
+    "chat             chat      main       quick-setting right-menu" 1fr/
+    1fr 2fr 5fr 3fr 50px;
+
+  width: 100vw;
+  height: 100vh;
+}
+.search-bar {
+  display: grid;
+  grid-template:
+    "search-input  help  setting  google-app  account" 50px/
+    1fr 50px 50px 50px 50px;
+}
+
+.main {
+  display: grid;
+  grid-template:
+    "important-email  social-email  sales-email" 80px
+    "email-list email-list email-list" 1fr/
+    150px 1fr 1fr;
+}
+
+.email-list {
+  display: grid;
+  grid-template:
+    "sender subject  receive-time " 1fr/
+    150px 1fr 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    display: grid;
+    grid-template:
+      "logo      search-bar     " 50px
+      "left-menu         main        " 300px
+      "left-menu             main        " 1fr
+      "chat               right-menu        " 50px/
+      50px 2fr;
+  }
+  .main-menu-button {
+    display: none;
+  }
+  .quick-setting {
+    display: none;
+  }
+
+  .email-list {
+    display: grid;
+    grid-template:
+      "subject-sender-list  receive-time " 1fr/
+      1fr 50px;
+  }
+  div.subject-sender-list {
+    display: initial;
+  }
+  .sender {
+    display: none;
+  }
+  .subject {
+    display: none;
+  }
+}
+
+.logo {
+  grid-area: logo;
+  background-color: rgb(63, 63, 168);
+  color: aliceblue;
+}
+.search-bar {
+  grid-area: search-bar;
+  background-color: rgb(112, 112, 163);
+  color: aliceblue;
+}
+.left-menu {
+  grid-area: left-menu;
+  background-color: rgb(193, 193, 206);
+  color: aliceblue;
+}
+.right-menu {
+  grid-area: right-menu;
+  background-color: rgb(190, 152, 159);
+  color: aliceblue;
+}
+.main {
+  grid-area: main;
+  background-color: rgb(226, 142, 157);
+  color: aliceblue;
+}
+
+.main-menu-button {
+  grid-area: main-menu-button;
+  background-color: rgb(148, 45, 64);
+  color: aliceblue;
+}
+
+.quick-setting {
+  grid-area: quick-setting;
+  background-color: burlywood;
+  color: aliceblue;
+}
+
+.chat {
+  grid-area: chat;
+  background-color: turquoise;
+  color: aliceblue;
+}
+
+.search-input {
+  grid-area: search-input;
+  background-color: purple;
+}
+.help {
+  grid-area: help;
+  background-color: rgb(88, 8, 88);
+}
+.setting {
+  grid-area: setting;
+  background-color: rgb(146, 101, 146);
+}
+.google-app {
+  grid-area: google-app;
+  background-color: rgb(233, 179, 233);
+}
+.account {
+  grid-area: account;
+  background-color: rgb(255, 0, 255);
+}
+
+.important-email {
+  grid-area: important-email;
+  background-color: rgb(130, 240, 130);
+}
+.social-email {
+  grid-area: social-email;
+  background-color: rgb(20, 104, 20);
+}
+.sales-email {
+  grid-area: sales-email;
+  background-color: rgb(4, 48, 4);
+}
+.email-list {
+  grid-area: email-list;
+  background-color: yellowgreen;
+}
+
+.subject {
+  grid-area: subject;
+  background-color: rgb(77, 77, 77);
+}
+.sender {
+  grid-area: sender;
+  background-color: rgb(172, 167, 167);
+}
+.receive-time {
+  grid-area: receive-time;
+  background-color: rgb(43, 43, 43);
+}
+.subject-sender-list {
+  grid-area: subject-sender-list;
+  background-color: rgb(123, 123, 182);
+  display: none;
+}
