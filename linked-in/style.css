@@ -38,6 +38,63 @@
     auto;
 }
 
+.news-feed {
+  display: grid;
+  grid-area: news-feed;
+
+  overflow: scroll;
+  grid-gap: 20px;
+
+  border: 1px solid black;
+  display: grid;
+  place-items: center;
+
+  padding: 10px;
+}
+
+.post {
+  display: grid;
+
+  border: 1px solid gray;
+  border-radius: 5px;
+
+  width: 100%;
+  background-color: wheat;
+
+  grid-template:
+    "post-icon post-name" 70px
+    "post-content post-content" auto
+    "post-image post-image" 300px/
+    70px 1fr;
+}
+.post-icon {
+  display: grid;
+  grid-area: post-icon;
+  grid-gap: 20px;
+  border: 1px solid black;
+}
+.post-name {
+  display: grid;
+  grid-area: post-name;
+  grid-gap: 20px;
+  border: 1px solid black;
+}
+.post-content {
+  display: grid;
+  grid-area: post-content;
+  grid-gap: 20px;
+  border: 1px solid black;
+}
+.post-image {
+  display: grid;
+  grid-area: post-image;
+  grid-gap: 20px;
+
+  background-image: url(https://images.pexels.com/photos/4218323/pexels-photo-4218323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+  background-position: center;
+}
+
 @media only screen and (max-width: 600px) {
   .grid-container {
     grid-template:
@@ -48,8 +105,8 @@
       1fr;
   }
 
-  .user-page-info,
-  .recent-use,
+  div.user-page-info,
+  div.recent-use,
   .linkedin-news {
     display: none;
   }
@@ -58,8 +115,7 @@
 .user-info,
 .user-page-info,
 .recent-use,
-.new-post,
-.news-feed {
+.new-post {
   border: 1px solid black;
   display: grid;
   place-items: center;
@@ -96,7 +152,6 @@
 .main {
   grid-area: main;
   background-color: rgb(226, 142, 157);
-  color: aliceblue;
 }
 .linkedin-news {
   grid-area: linkedin-news;
