@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 .grid-container {
@@ -9,7 +10,7 @@
     "left-menu message-list contact-info contact-info" 150px
     "left-menu message-list chatbox chatbox" 1fr
     "left-menu account-setting chatbox chatbox" 50px/
-    80px 150px 1fr 250px;
+    80px 200px minmax(100px, 1fr) 250px;
 
   width: 100vw;
   height: 100vh;
@@ -17,14 +18,88 @@
 
 .left-menu {
   grid-area: left-menu;
+  display: grid;
   background-color: rgb(63, 63, 168);
-  color: aliceblue;
+  grid-auto-rows: max-content;
+  grid-gap: 10px;
+  place-items: center;
+  padding-top: 10px;
 }
+
+.menu-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  border: 1px solid black;
+  display: inline-block;
+}
+
 .message-list {
   grid-area: message-list;
-  background-color: rgb(112, 112, 163);
-  color: aliceblue;
+  display: grid;
+  grid-template:
+    "new-conversation " 50px
+    "add-friends" 80px
+    "direct-messages" 1fr/
+    100%;
+  grid-gap: 10px;
+  padding: 5px;
 }
+
+.new-conversation {
+  grid-area: new-conversation;
+}
+
+.new-conversation input[type="text"] {
+  padding: 10px 0px;
+  border-radius: 4px;
+  background-color: #4d4d4d;
+  color: rgb(165, 164, 164);
+  width: 100%;
+}
+
+.add-friends {
+  grid-area: add-friends;
+  width: 100%;
+  height: 50px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.direct-messages {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-gap: 5px;
+  overflow: scroll;
+}
+
+.friend {
+  display: grid;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(170, 169, 169);
+  border-radius: 5px;
+  padding: 5px;
+  grid-template:
+    "friend-icon friend-name" auto/
+    50px 1fr;
+  grid-gap: 10px;
+}
+
+.friend-icon {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-color: royalblue;
+  border-radius: 50%;
+}
+.friend-name {
+  display: grid;
+  align-content: center;
+  overflow: hidden;
+}
+
 .contact-status-bar {
   grid-area: contact-status-bar;
   background-color: rgb(16, 16, 255);
@@ -64,5 +139,9 @@
   }
   .contact-status-bar {
     display: none;
+  }
+  .menu-icon {
+    width: 40px;
+    height: 40px;
   }
 }
