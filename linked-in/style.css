@@ -5,27 +5,72 @@
 .grid-container {
   display: grid;
   grid-template:
-    "logo search-bar nav-bar nav-bar" 100px
-    "account-profile main  main linkedin-news" 1fr
-    "account-profile main  main footer" 1fr/
-    100px 1fr 1fr 100px;
+    "header header  header" 100px
+    "account-profile   main linkedin-news" 1fr
+    "account-profile   main footer" 100px/
+    200px 1fr 200px;
 
   width: 100vw;
   height: 100vh;
+}
+.header {
+  padding: 5px;
+  grid-area: header;
+  display: grid;
+  grid-template: "logo search-bar nav-bar" auto/ 50px minmax(100px, 1fr) auto;
+}
+
+.account-profile {
+  display: grid;
+  grid-gap: 2px;
+  grid-template:
+    "user-info" auto
+    "user-page-info" auto
+    "recent-use" auto/
+    minmax(200px auto);
+}
+
+.main {
+  display: grid;
+  grid-template:
+    "new-post" 100px
+    "news-feed" 1fr /
+    auto;
 }
 
 @media only screen and (max-width: 600px) {
   .grid-container {
     grid-template:
-      "logo search-bar " 100px
-      "nav-bar account-profile" 100px
-      "nav-bar  main   " 1fr
-      "footer footer" 100px /
-      50px 1fr;
+      "header " auto
+      " account-profile" 100px
+      "  main   " 1fr
+      " footer" 100px /
+      1fr;
   }
+
+  .user-page-info,
+  .recent-use,
   .linkedin-news {
     display: none;
   }
+}
+
+.user-info,
+.user-page-info,
+.recent-use,
+.new-post,
+.news-feed {
+  border: 1px solid black;
+  display: grid;
+  place-items: center;
+}
+
+.nav-icon {
+  width: 50px;
+  height: 50px;
+
+  border: 1px solid black;
+  display: inline-block;
 }
 
 .logo {
