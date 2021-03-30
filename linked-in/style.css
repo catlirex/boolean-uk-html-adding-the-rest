@@ -70,20 +70,26 @@
 .post-icon {
   display: grid;
   grid-area: post-icon;
-  grid-gap: 20px;
   border: 1px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 10px;
+  place-content: center;
 }
+
 .post-name {
   display: grid;
   grid-area: post-name;
   grid-gap: 20px;
   border: 1px solid black;
+  padding-top: 5px;
 }
 .post-content {
   display: grid;
   grid-area: post-content;
   grid-gap: 20px;
   border: 1px solid black;
+  padding: 5px;
 }
 .post-image {
   display: grid;
@@ -114,11 +120,24 @@
 
 .user-info,
 .user-page-info,
-.recent-use,
-.new-post {
+.recent-use {
   border: 1px solid black;
   display: grid;
   place-items: center;
+}
+
+.new-post {
+  border: 1px solid black;
+  display: grid;
+  padding: 5px;
+}
+
+input[type="text"] {
+  padding: 12px 20px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .nav-icon {
